@@ -1,11 +1,9 @@
 # Usa una imagen base con PHP y Apache
-FROM php:7.4-apache
+FROM php:8.0-apache
 
 # Habilita mod_rewrite para Apache (si es necesario)
-RUN a2enmod rewrite
+WORKDIR /var/www/html/poke-api
 
 # Copia los archivos de tu aplicación a la carpeta del servidor web de Apache
-COPY . /var/www/html/
+COPY . .
 
-# Exponer el puerto 80 para que sea accesible
-EXPOSE 80
